@@ -9,7 +9,7 @@ const TicTacToe = () => {
   const [winner, setWinner] = useState(null);
   
 
-  const resetGame = () => {
+  const reset = () => {
     setBoard(Array(3).fill(null).map(() => Array(3).fill("")));
     setXTurn(true);
     setWinner(null);
@@ -18,7 +18,7 @@ const TicTacToe = () => {
 
   };
 
-  const checkWinner = (newBoard) => {
+  const winCheck = (newBoard) => {
     const directions = [
       [0, 1], [1, 0], [1, 1], [1, -1]
     ];
@@ -45,13 +45,13 @@ const TicTacToe = () => {
     return null;
   };
 
-  const handleClick = (i, j) => {
+  const click = (i, j) => {
     if (board[i][j] !== "" || winner) return;
     const newBoard = board.map(row => [...row]);
     newBoard[i][j] = xTurn ? "X" : "O";
     setBoard(newBoard);
 
-    const result = checkWinner(newBoard);
+    const result = winCheck(newBoard);
     if (result) setWinner(result);
     else setXTurn(!xTurn);
     
@@ -100,11 +100,11 @@ const TicTacToe = () => {
       </h3>
 
       {winner && (
-  <div className="modal-overlay">
+  <div className="modal-overview">
     <div className="modal-content" >
       <p className="result">{winner === "Draw" ? "It's a Draw!" : ` '${winner}' WON!!🎉 `}</p>
       <br />
-      <button onClick={resetGame}>Play Again</button>
+      <button onClick={reset}>Play Again</button>
     </div>
   </div>
 )}
@@ -116,7 +116,7 @@ const TicTacToe = () => {
               <button
   key={j}
   className={`cell ${cell === "X" ? "x-cell" : cell === "O" ? "o-cell" : ""}`}
-  onClick={() => handleClick(i, j)}
+  onClick={() => click(i, j)}
 >
   {cell}
 </button>
@@ -126,7 +126,7 @@ const TicTacToe = () => {
         ))}
       </div>
 
-      <button className="reset-button" onClick={resetGame}>
+      <button className="reset-button" onClick={reset}>
         Reset Game
       </button>
     </div>
