@@ -163,7 +163,7 @@ input{
   color: orange;
   height: 100vh;
   font-family: sans-serif;
-  background-image: url("../assets/bg_tictactoe.avif");
+  background-image: url("../assets/bg_tictactoe.png");
   background-repeat: no-repeat;
   background-position: center ;
   background-size: cover;
