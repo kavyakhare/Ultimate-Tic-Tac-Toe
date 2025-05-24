@@ -176,10 +176,6 @@ input{
   background-color: #ffbf00;
   animation: filling 3.5s cubic-bezier(.1,.9,.3,.6) forwards;
 }
-.load{
-  position: relative;
-  top: 460px;
-}
 @media (max-width: 768px) {
   .wel {
     font-size: 40px;
