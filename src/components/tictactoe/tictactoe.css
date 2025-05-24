@@ -94,7 +94,7 @@ input{
 .reset-button:active{
   background-color: rgb(200, 200, 200);
 }
-.modal-overlay {
+.modal-overview {
   position: fixed;
   top: 0;
   left: 0;
