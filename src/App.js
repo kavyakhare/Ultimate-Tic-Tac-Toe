@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import TicTacToe from "./components/tictactoe/tictactoe";
-import welcomeImg from "./components/assets/bg_tictactoe.avif"
+
 
 
 function App() {
