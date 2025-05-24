@@ -21,7 +21,6 @@ function App() {
 
         <div className="loading-screen">
           
-          <h2 className="load">Loading Game...</h2>
           <div className="loader" id="loading-bar">
             
           </div>
